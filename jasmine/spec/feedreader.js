@@ -125,7 +125,7 @@ $(function() {
          beforeEach(function (done) {
             $('.feed').empty();
             loadFeed(0, function () {
-                entriesStart = $('.feed').find(allFeeds.url);
+                entriesBeg = $('.feed').find(allFeeds.url);
             });
             loadFeed(1, function () {
                 entriesEnd = $('.feed').find(allFeeds.url);
@@ -134,7 +134,7 @@ $(function() {
         });
 
         it('new feed is different to old one when loaded', function () {
-            expect(entriesStart).not.toBe(entriesEnd);
+            expect(entriesBeg).not.toBe(entriesEnd);
         });
 
     })
