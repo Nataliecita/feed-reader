@@ -65,17 +65,27 @@ $(function() {
          */
         it('should have the menu hidden when site is first visited', function(){
 
-            var body = document.getElementsByTagName("body");  
+            var body = document.getElementsByTagName('body');  
 
             expect($(body).hasClass('menu-hidden')).toBe(true);
         })
 
-         /* TODO: Write a test that ensures the menu changes
+         /* Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-        
+          it('should display menu items when clicked the first time, and hide them when clicked again', function(){
+            const menu = document.querySelector('.menu-icon-link');
+            
+            menu.click();
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+
+            // Make sure it is hidden again
+            menu.click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+
+          })
 
     })
 
