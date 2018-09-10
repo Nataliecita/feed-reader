@@ -121,6 +121,7 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         var entriesBeg, entriesEnd;
 
          beforeEach(function (done) {
             $('.feed').empty();
