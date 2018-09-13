@@ -126,17 +126,17 @@ $(function() {
             $('.feed').empty();
             loadFeed(0, function () {
                 entriesBeg = $('.feed').find(allFeeds.url);
-            });
-            loadFeed(1, function () {
-                entriesEnd = $('.feed').find(allFeeds.url);
+
+                loadFeed(1, function () {
+                    entriesEnd = $('.feed').find(allFeeds.url);
                 // when both entries are loaded, then function can finish
-                done();
+                    done();
+                });
             });
         });
 
         it('new feed is different to old one when loaded', function () {
             expect(entriesBeg).not.toBe(entriesEnd);
         });
-
     })
 }());
