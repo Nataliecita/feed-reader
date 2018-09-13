@@ -103,13 +103,11 @@ $(function() {
 
         beforeEach(function(done){
             $('.feed').empty();
-            loadFeed(0, function(){
-                done();
-            });
-        });
+            loadFeed(0, done);
+        })
 
         it('should have atleast one entry in feed container', function(){
-            expect(('.feed').length).not.toBe(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     })
 
