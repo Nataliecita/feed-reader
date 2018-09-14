@@ -33,9 +33,9 @@ $(function() {
          */
 
          it('checks all feed objects have an URL', function(){
-            for(var i of allFeeds){
-                expect(i['url']).toBeDefined();
-                expect(i['url']).not.toEqual('');
+            for(var feed of allFeeds){
+                expect(feed['url']).toBeDefined();
+                expect(feed['url']).not.toEqual('');
             }
          });
 
@@ -46,9 +46,9 @@ $(function() {
          */
 
           it('checks all feed objects have a name', function(){
-            for(var i of allFeeds){
-                expect(i['name']).toBeDefined();
-                expect(i['name']).not.toEqual('');
+            for(var feed of allFeeds){
+                expect(feed['name']).toBeDefined();
+                expect(feed['name']).not.toEqual('');
             }
          });
     });
@@ -119,16 +119,19 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-         var entriesBeg, entriesEnd;
+         let entriesBeg, entriesEnd;
 
          beforeEach(function (done) {
             // empty feed and load seperate entries
             $('.feed').empty();
             loadFeed(0, function () {
-                entriesBeg = $('.feed').find(allFeeds.url);
+                // compare the whole html as opposed to just one part of the feed
+                entriesBeg = $('.feed').html()
 
                 loadFeed(1, function () {
-                    entriesEnd = $('.feed').find(allFeeds.url);
+                    // compare the whole html as opposed to just one part of the feed
+                    entriesEnd = $('.feed').html()
+
                 // when both entries are loaded, then function can finish
                     done();
                 });
