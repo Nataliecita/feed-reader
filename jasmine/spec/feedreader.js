@@ -33,9 +33,9 @@ $(function() {
          */
 
          it('checks all feed objects have an URL', function(){
-            for(var i of allFeeds){
-                expect(i['url']).toBeDefined();
-                expect(i['url']).not.toEqual('');
+            for(var feed of allFeeds){
+                expect(feed['url']).toBeDefined();
+                expect(feed['url']).not.toEqual('');
             }
          });
 
@@ -46,9 +46,9 @@ $(function() {
          */
 
           it('checks all feed objects have a name', function(){
-            for(var i of allFeeds){
-                expect(i['name']).toBeDefined();
-                expect(i['name']).not.toEqual('');
+            for(var feed of allFeeds){
+                expect(feed['name']).toBeDefined();
+                expect(feed['name']).not.toEqual('');
             }
          });
     });
